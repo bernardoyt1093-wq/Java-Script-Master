@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratório - JS Master</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+IE+Sj:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">JS<span>Master</span></div>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="aulas.html">Aulas</a></li>
+            <li><a href="praticas.html" style="color: #f7df1e;">Práticas</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Laboratório <span>Interativo</span></h1>
+        <p>Escolha um desafio para abrir o editor de código abaixo.</p>
+    </header>
+
+    <main class="container">
+        <div id="tutorial-texto"></div>
+
+        <section class="aulas-grid">
+            <h2 style="margin-bottom: 25px; font-family: 'Playwrite IE Sj', cursive;">Desafios Disponíveis</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <span class="badge">Nível 1</span>
+                    <h3>Variáveis</h3>
+                    <button onclick="verAula(1)" class="btn-lesson">Abrir Laboratório</button>
+                </div>
+                <div class="card">
+                    <span class="badge">Nível 2</span>
+                    <h3>Funções</h3>
+                    <button onclick="verAula(2)" class="btn-lesson">Abrir Laboratório</button>
+                </div>
+                <div class="card">
+                    <span class="badge">Nível 3</span>
+                    <h3>Lógica</h3>
+                    <button onclick="verAula(3)" class="btn-lesson">Abrir Laboratório</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

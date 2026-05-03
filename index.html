@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Master - Prof. Bernardo</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+IE+Sj:wght@100..400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">JS<span>Master</span></div>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="aulas.html">Aulas</a></li>
+            <li><a href="praticas.html">Práticas</a></li>
+            <li><a href="https://discord.com/channels/1499755355570176081/1499755770991083570" target="_blank" class="btn-comunidade">Comunidade</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Domine o <span>JavaScript</span> do zero com o prof. Bernardo.</h1>
+        <p>Aprenda programação de um jeito simples, prático e interativo.</p>
+        <div style="margin-top: 20px;">
+            <button class="btn-primary" onclick="window.location.href='aulas.html'">Começar a Estudar</button>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="card" style="text-align: center; margin-bottom: 40px;">
+            <h2 style="font-family: 'Playwrite IE Sj', cursive; color: var(--js-yellow);">Bem-vindo ao Portal</h2>
+            <p>Este é o seu espaço para dominar a linguagem que move a internet. Navegue pelas aulas teóricas ou vá direto para o nosso laboratório praticar!</p>
+        </section>
+
+        <div class="cards-container">
+            <div class="card">
+                <span class="badge">Teoria</span>
+                <h3>Aulas Explicativas</h3>
+                <p>Conteúdo detalhado sobre variáveis, funções e lógica de programação.</p>
+                <button onclick="window.location.href='aulas.html'" class="btn-lesson">Ver Aulas</button>
+            </div>
+
+            <div class="card">
+                <span class="badge">Mão na Massa</span>
+                <h3>Laboratório JS</h3>
+                <p>Um editor de código interativo para você testar seus conhecimentos agora.</p>
+                <button onclick="window.location.href='praticas.html'" class="btn-lesson">Ir para Práticas</button>
+            </div>
+
+            <div class="card">
+                <span class="badge">Networking</span>
+                <h3>Comunidade</h3>
+                <p>Tire suas dúvidas e interaja com outros alunos no nosso Discord.</p>
+                <button onclick="window.location.href='https://discord.com/channels/1499755355570176081/1499755770991083570'" class="btn-lesson" style="background:#5865F2;">Abrir Discord</button>
+            </div>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 40px; color: var(--js-yellow); opacity: 0.8; font-size: 0.9rem;">
+        &copy; 2026 JS Master - Criado por Prof. Bernardo.
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
