@@ -23,8 +23,3 @@ O projeto é dividido em três páginas principais:
 3.  `praticas.html`: Laboratório com o motor de execução de código.
 
 ## 🚀 Como rodar o projeto localmente
-Home Page,Laboratório Prático
-,
-1. Faça o download ou clone este repositório:
-   ```bash
-   git clone [https://github.com/SEU_USUARIO/js-master.git](https://github.com/SEU_USUARIO/js-master.git)
