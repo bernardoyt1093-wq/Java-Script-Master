@@ -1,0 +1,30 @@
+name: Generate Sitemap
+
+on:
+  push:
+    branches: [main] # Certifique-se de que sua branch principal se chama main
+
+jobs:
+  sitemap_job:
+    runs-on: ubuntu-latest
+    name: Generate a sitemap
+    permissions:
+      contents: write # Permissão para o GitHub gravar o arquivo no seu repositório
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Generate the sitemap
+        uses: cicirello/generate-sitemap@v1
+        with:
+          base-url-path: https://bernardoyt1093-wq.github.io/Js-Master/
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml
+          git commit -m "Automated sitemap update" || exit 0
+          git push
