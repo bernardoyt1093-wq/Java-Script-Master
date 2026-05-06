@@ -1,11 +1,11 @@
 :root {
-    --bg-color: #51468e;
-    --card-bg: #4c6299;
-    --js-yellow: #f7df1e;
-    --text-white: #fffda4;
+    --bg-color: #AB87FF;
+    --card-bg: #83B692;
+    --js-yellow: #FFE74C;
+    --text-white: #FFE74C;
     --accent-blue: #191953;
     /* Variável para a nova fonte */
-    --font-especial: 'Playwrite IE Sj', cursive;
+    --font-especial: 'ALFA SLAB ONE;
 }
 
 * {
@@ -83,7 +83,7 @@ h1, h2, h3, .logo, .btn-primary, .btn-run, .btn-lesson {
 
 textarea {
     background: #000000;
-    color: #abb2bf;
+    color: #83B692;
     padding: 1rem;
     border-radius: 5px;
     font-family: 'Courier New', Courier, monospace;
