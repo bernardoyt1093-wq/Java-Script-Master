@@ -1,209 +1,61 @@
-/* Importando a fonte Alfa Slab One do Google Fonts */
+/* Importando as fontes */
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 
 :root {
-    --bg-dark: #282828;      /* Cor Escura Principal */
-    --purple-main: #9D86CD;  /* Roxo Médio */
-    --purple-light: #8c98e3; /* Roxo Azulado */
-    --blue-light: #98BFFF;   /* Azul Claro */
-    --blue-accent: #909ce8;  /* Azul de destaque */
-    --text-dark: #282828;    /* Texto Escuro para contraste */
-    --text-light: #ffffff;   /* Texto Branco para fundos escuros */
+    /* MODO ESCURO (Suas cores originais) */
+    --bg-color: #282828;
+    --card-bg: #9D86CD;
+    --text-primary: #ffffff;
+    --text-dark: #282828;
+    --accent-blue: #98BFFF;
+    --nav-bg: #9D86CD;
+    --transition: 0.5s ease;
+}
+
+[data-theme="light"] {
+    /* MODO CLARO (Inversão harmônica) */
+    --bg-color: #f0f0f0;
+    --card-bg: #ffffff;
+    --text-primary: #282828;
+    --text-dark: #282828;
+    --accent-blue: #909ce8;
+    --nav-bg: #8c98e3;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Alfa Slab One', serif; /* Aplicado a todos os dispositivos */
-}
-
-html {
-    scroll-behavior: smooth;
+    font-family: 'Alfa Slab One', serif;
+    transition: background var(--transition), color var(--transition); /* Isso faz o "suave" */
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-light);
-    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
 }
 
-/* --- NAVBAR --- */
-.navbar {
-    background-color: var(--purple-main);
-    padding: 1rem 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-.navbar .logo {
-    font-size: 1.5rem;
-    color: var(--text-dark);
-}
-
-.navbar .logo span {
-    color: var(--text-light);
-}
-
-.navbar ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    align-items: center;
-}
-
-.navbar ul li a {
-    text-decoration: none;
-    color: var(--text-dark);
-    font-size: 0.9rem;
-    transition: 0.3s;
-}
-
-.navbar ul li a:hover {
-    color: var(--text-light);
-}
-
-/* Botão Especial Comunidade */
-.btn-comunidade {
-    background-color: var(--blue-light);
-    padding: 8px 15px;
-    border-radius: 8px;
-    border: 2px solid var(--text-dark);
-}
-
-/* --- HERO SECTION --- */
-.hero {
-    text-align: center;
-    padding: 80px 20px;
-    background: linear-gradient(180deg, var(--purple-main) 0%, var(--bg-dark) 100%);
-}
-
-.hero h1 {
-    font-size: 2.5rem;
-    color: var(--text-dark);
-    margin-bottom: 20px;
-    text-shadow: 2px 2px var(--blue-light);
-}
-
-.hero h1 span {
-    color: var(--text-light);
-    text-shadow: 2px 2px var(--bg-dark);
-}
-
-.hero p {
-    color: var(--blue-light);
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-/* --- CONTAINER E CARDS --- */
-.container {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-.cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
+/* Ajuste nos Cards para usarem as variáveis */
 .card {
-    background-color: var(--purple-light);
-    padding: 30px;
-    border-radius: 20px;
-    border: 4px solid var(--blue-light);
+    background-color: var(--card-bg);
     color: var(--text-dark);
-    transition: transform 0.3s ease;
+    border: 4px solid var(--accent-blue);
+    padding: 20px;
+    border-radius: 15px;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    background-color: var(--blue-light);
+.navbar {
+    background-color: var(--nav-bg);
 }
 
-.card h3 {
-    margin-bottom: 15px;
-    font-size: 1.4rem;
-}
-
-.badge {
-    background-color: var(--bg-dark);
-    color: var(--blue-light);
+/* Estilo do Botão de Troca */
+.theme-switch {
+    background: var(--text-primary);
+    color: var(--bg-color);
+    border: none;
     padding: 5px 10px;
     border-radius: 5px;
-    font-size: 0.7rem;
-    display: inline-block;
-    margin-bottom: 10px;
-}
-
-/* --- BOTÕES --- */
-.btn-primary, .btn-lesson {
-    background-color: var(--bg-dark);
-    color: var(--blue-light);
-    border: none;
-    padding: 12px 25px;
-    font-family: 'Alfa Slab One', serif;
     cursor: pointer;
-    border-radius: 10px;
-    transition: 0.3s;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 15px;
-}
-
-.btn-primary:hover, .btn-lesson:hover {
-    background-color: var(--text-light);
-    color: var(--bg-dark);
-    transform: scale(1.05);
-}
-
-/* --- EDITOR DE CÓDIGO (PRÁTICAS) --- */
-#tutorial-texto {
-    margin-bottom: 40px;
-}
-
-#codigo-editor, #campo-codigo {
-    width: 100%;
-    background-color: #1a1a1a;
-    color: var(--blue-light);
-    border: 3px solid var(--purple-main);
-    padding: 15px;
-    border-radius: 10px;
-    font-family: monospace !important; /* Código precisa ser monospace */
-    font-size: 1.1rem;
-}
-
-#console-output, #console-fake {
-    background-color: #000;
-    color: #4ade80;
-    padding: 15px;
-    border-radius: 10px;
-    margin-top: 15px;
-    font-family: monospace !important;
-}
-
-/* --- FOOTER --- */
-footer {
-    border-top: 2px solid var(--purple-main);
-    padding: 40px;
-    background-color: #222;
-}
-
-/* Responsividade para Celulares */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .hero h1 {
-        font-size: 1.8rem;
-    }
+    font-size: 0.7rem;
+    margin-left: 10px;
 }
