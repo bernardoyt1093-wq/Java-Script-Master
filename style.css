@@ -1,86 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 
 :root {
-    --bg-color: #282828;
-    --nav-bg: #9D86CD;
-    --card-bg: #8c98e3;
+    --bg: #282828;
+    --nav: #9D86CD;
+    --card: #8c98e3;
     --accent: #98BFFF;
-    --text-color: #ffffff;
     --text-dark: #282828;
+    --text-light: #ffffff;
 }
 
 [data-theme="light"] {
-    --bg-color: #f0f0f0;
-    --nav-bg: #909ce8;
-    --card-bg: #ffffff;
-    --text-color: #282828;
+    --bg: #f0f0f0;
+    --nav: #98BFFF;
+    --card: #ffffff;
+    --text-dark: #282828;
+    --text-light: #282828;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; padding: 0; box-sizing: border-box;
     font-family: 'Alfa Slab One', cursive;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background 0.4s, color 0.4s;
+    background-color: var(--bg);
+    color: var(--text-light);
+    transition: 0.4s;
 }
 
 .navbar {
-    background-color: var(--nav-bg);
+    background-color: var(--nav);
     padding: 15px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; justify-content: space-between; align-items: center;
 }
 
-.navbar ul {
-    display: flex;
-    list-style: none;
-    gap: 15px;
+.nav-links {
+    display: flex; list-style: none; gap: 15px; align-items: center;
 }
 
-.navbar a {
-    text-decoration: none;
-    color: var(--text-dark);
-    font-size: 12px;
+.nav-links a {
+    text-decoration: none; color: var(--text-dark); font-size: 14px;
+}
+
+.comunidade-link {
+    background: var(--accent); padding: 5px 10px; border-radius: 5px;
 }
 
 .theme-switch {
-    background: var(--text-dark);
-    color: white;
-    border: 2px solid var(--accent);
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Alfa Slab One', cursive;
+    background: var(--text-dark); color: white; border: 2px solid var(--accent);
+    padding: 8px 12px; border-radius: 8px; cursor: pointer;
 }
 
-.container {
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 20px;
-}
+.hero { text-align: center; padding: 50px 20px; }
+.hero h1 span { color: var(--nav); }
+
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
 
 .card {
-    background-color: var(--card-bg);
-    color: var(--text-dark);
-    padding: 25px;
-    border-radius: 15px;
-    border: 4px solid var(--accent);
+    background-color: var(--card); color: var(--text-dark);
+    padding: 30px; border-radius: 20px; border: 5px solid var(--accent);
 }
 
 .btn-primary {
-    background: var(--bg-color);
-    color: var(--accent);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 10px;
-    display: inline-block;
-    text-decoration: none;
+    background: var(--bg); color: var(--accent);
+    padding: 12px 20px; border: none; border-radius: 10px; cursor: pointer;
+}
+
+#codigo-editor {
+    width: 100%; height: 150px; background: #000; color: #0f0;
+    padding: 15px; font-family: monospace; border-radius: 10px; margin-top: 15px;
+}
+
+#console-output {
+    background: #111; color: #fff; padding: 15px; border-radius: 10px; margin-top: 10px;
 }
