@@ -1,34 +1,43 @@
-const aulasConteudo = {
-    1: {
-        titulo: "Praticando Variáveis",
-        codigo: "let curso = 'JS Master';\nconsole.log('Bem-vindo ao ' + curso);"
-    },
-    2: {
-        titulo: "Praticando Funções",
-        codigo: "function saudacao(nome) {\n  return 'Olá ' + nome;\n}\nconsole.log(saudacao('Bernardo'));"
-    },
-    3: {
-        titulo: "Praticando Lógica",
-        codigo: "let pontos = 80;\nif(pontos >= 50) {\n  console.log('Aprovado!');\n} else {\n  console.log('Reprovado');\n}"
+// Lógica do Tema Claro/Escuro
+const themeButton = document.getElementById('theme-button');
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+}
+
+themeButton.addEventListener('click', () => {
+    let theme = document.documentElement.getAttribute('data-theme');
+    if (theme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
     }
+});
+
+// Lógica das Práticas (Exemplo simplificado para funcionar em praticas.html)
+const aulasConteudo = {
+    1: { titulo: "Variáveis", codigo: "let nome = 'Bernardo';\nconsole.log('Olá, ' + nome);" },
+    2: { titulo: "Funções", codigo: "function soma(a,b){ return a+b; }\nconsole.log(soma(10,5));" },
+    3: { titulo: "Lógica", codigo: "let pontos = 100;\nif(pontos > 50) console.log('Aprovado!');" }
 };
 
 function verAula(id) {
     const area = document.getElementById('tutorial-texto');
     const aula = aulasConteudo[id];
-
+    if(!area) return;
     area.innerHTML = `
-        <div style="background: #1e293b; padding: 20px; border-radius: 12px; border: 2px solid #f7df1e; margin-bottom: 30px;">
-            <h2 style="color: #f7df1e; font-family: 'Playwrite IE Sj', cursive;">${aula.titulo}</h2>
-            <textarea id="codigo-editor" style="width:100%; height:100px; background:#000; color:#4ade80; font-family:monospace; padding:10px; margin:10px 0;">${aula.codigo}</textarea>
-            <button onclick="executarCodigo()" class="btn-primary">▶ Executar</button>
-            <div id="console-output" style="background:#000; color:#fff; padding:10px; margin-top:10px; border-radius:5px; font-family:monospace;">> Aguardando...</div>
-        </div>
-    `;
-    window.scrollTo({top: 0, behavior: 'smooth'});
+        <div class="card">
+            <h2>${aula.titulo}</h2>
+            <textarea id="codigo-editor">${aula.codigo}</textarea>
+            <button onclick="executar()" class="btn-primary">Executar</button>
+            <div id="console-output">> Aguardando...</div>
+        </div>`;
 }
 
-function executarCodigo() {
+function executar() {
     const cod = document.getElementById('codigo-editor').value;
     const out = document.getElementById('console-output');
     out.innerHTML = "";
@@ -37,7 +46,5 @@ function executarCodigo() {
         console.log = (m) => { out.innerHTML += "> " + m + "<br>"; };
         eval(cod);
         console.log = log;
-    } catch (e) {
-        out.innerHTML = "<span style='color:red;'>Erro: " + e.message + "</span>";
-    }
+    } catch (e) { out.innerHTML = "Erro: " + e.message; }
 }
