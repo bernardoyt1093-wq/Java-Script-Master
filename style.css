@@ -48,14 +48,19 @@ body {
     background-color: var(--nav-bg);
 }
 
-/* Estilo do Botão de Troca */
 .theme-switch {
-    background: var(--text-primary);
-    color: var(--bg-color);
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
+    background-color: var(--text-dark); /* Cor escura que você pediu: #282828 */
+    color: #ffffff;
+    border: 2px solid var(--accent);
+    padding: 8px 15px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 0.7rem;
-    margin-left: 10px;
+    font-family: 'Alfa Slab One', serif;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.theme-switch:hover {
+    background-color: var(--accent);
+    color: var(--text-dark);
 }
