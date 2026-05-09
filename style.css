@@ -1,73 +1,209 @@
+/* Importando a fonte Alfa Slab One do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 
 :root {
-    --bg: #282828;
-    --nav: #9D86CD;
-    --card: #8c98e3;
-    --accent: #98BFFF;
-    --text-light: #ffffff;
-    --text-dark: #282828;
-}
-
-[data-theme="light"] {
-    --bg: #f0f0f0;
-    --nav: #98BFFF;
-    --card: #ffffff;
-    --text-light: #282828;
+    --bg-dark: #282828;      /* Cor Escura Principal */
+    --purple-main: #9D86CD;  /* Roxo Médio */
+    --purple-light: #8c98e3; /* Roxo Azulado */
+    --blue-light: #98BFFF;   /* Azul Claro */
+    --blue-accent: #909ce8;  /* Azul de destaque */
+    --text-dark: #282828;    /* Texto Escuro para contraste */
+    --text-light: #ffffff;   /* Texto Branco para fundos escuros */
 }
 
 * {
-    margin: 0; padding: 0; box-sizing: border-box;
-    font-family: 'Alfa Slab One', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Alfa Slab One', serif; /* Aplicado a todos os dispositivos */
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--bg);
+    background-color: var(--bg-dark);
     color: var(--text-light);
-    transition: background 0.5s ease;
+    line-height: 1.6;
 }
 
+/* --- NAVBAR --- */
 .navbar {
-    background-color: var(--nav);
-    padding: 15px 5%;
-    display: flex; justify-content: space-between; align-items: center;
+    background-color: var(--purple-main);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-.navbar ul { display: flex; list-style: none; gap: 15px; align-items: center; }
+.navbar .logo {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+}
 
-.navbar a { text-decoration: none; color: var(--text-dark); font-size: 13px; }
+.navbar .logo span {
+    color: var(--text-light);
+}
 
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: var(--text-light);
+}
+
+/* Botão Especial Comunidade */
 .btn-comunidade {
-    background: var(--accent); padding: 5px 10px; border-radius: 5px;
+    background-color: var(--blue-light);
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: 2px solid var(--text-dark);
 }
 
-.theme-switch {
-    background: var(--text-dark); color: white; border: 2px solid var(--accent);
-    padding: 7px 12px; border-radius: 8px; cursor: pointer; font-family: 'Alfa Slab One', cursive;
+/* --- HERO SECTION --- */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(180deg, var(--purple-main) 0%, var(--bg-dark) 100%);
 }
 
-.hero { text-align: center; padding: 60px 20px; }
-.hero h1 span { color: var(--nav); }
+.hero h1 {
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px var(--blue-light);
+}
 
-.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+.hero h1 span {
+    color: var(--text-light);
+    text-shadow: 2px 2px var(--bg-dark);
+}
+
+.hero p {
+    color: var(--blue-light);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- CONTAINER E CARDS --- */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
 
 .card {
-    background-color: var(--card); color: var(--text-dark);
-    padding: 30px; border-radius: 20px; border: 5px solid var(--accent);
-    margin-bottom: 20px;
+    background-color: var(--purple-light);
+    padding: 30px;
+    border-radius: 20px;
+    border: 4px solid var(--blue-light);
+    color: var(--text-dark);
+    transition: transform 0.3s ease;
 }
 
-.btn-primary {
-    background: var(--bg); color: var(--accent);
-    padding: 12px 20px; border: none; border-radius: 10px; cursor: pointer;
-    font-family: 'Alfa Slab One', cursive;
+.card:hover {
+    transform: translateY(-10px);
+    background-color: var(--blue-light);
 }
 
-#codigo-editor {
-    width: 100%; height: 140px; background: #000; color: #0f0;
-    padding: 15px; font-family: monospace; border-radius: 10px; margin-top: 15px;
+.card h3 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
 }
 
-#console-output {
-    background: #111; color: #fff; padding: 15px; border-radius: 10px; margin-top: 10px;
+.badge {
+    background-color: var(--bg-dark);
+    color: var(--blue-light);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* --- BOTÕES --- */
+.btn-primary, .btn-lesson {
+    background-color: var(--bg-dark);
+    color: var(--blue-light);
+    border: none;
+    padding: 12px 25px;
+    font-family: 'Alfa Slab One', serif;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.btn-primary:hover, .btn-lesson:hover {
+    background-color: var(--text-light);
+    color: var(--bg-dark);
+    transform: scale(1.05);
+}
+
+/* --- EDITOR DE CÓDIGO (PRÁTICAS) --- */
+#tutorial-texto {
+    margin-bottom: 40px;
+}
+
+#codigo-editor, #campo-codigo {
+    width: 100%;
+    background-color: #1a1a1a;
+    color: var(--blue-light);
+    border: 3px solid var(--purple-main);
+    padding: 15px;
+    border-radius: 10px;
+    font-family: monospace !important; /* Código precisa ser monospace */
+    font-size: 1.1rem;
+}
+
+#console-output, #console-fake {
+    background-color: #000;
+    color: #4ade80;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    font-family: monospace !important;
+}
+
+/* --- FOOTER --- */
+footer {
+    border-top: 2px solid var(--purple-main);
+    padding: 40px;
+    background-color: #222;
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .hero h1 {
+        font-size: 1.8rem;
+    }
 }
