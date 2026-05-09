@@ -1,37 +1,40 @@
-// TEMA CLARO/ESCURO
-const btn = document.getElementById('theme-button');
-btn.addEventListener('click', () => {
-    const doc = document.documentElement;
-    const isLight = doc.getAttribute('data-theme') === 'light';
-    doc.setAttribute('data-theme', isLight ? 'dark' : 'light');
+// CONTROLE DO TEMA
+const themeBtn = document.getElementById('theme-button');
+themeBtn.addEventListener('click', () => {
+    const html = document.documentElement;
+    const isLight = html.getAttribute('data-theme') === 'light';
+    html.setAttribute('data-theme', isLight ? 'dark' : 'light');
+    themeBtn.textContent = isLight ? "Modo Claro" : "Modo Escuro";
 });
 
-// SISTEMA DE PRÁTICAS
-const conteudo = {
-    1: { t: "Variáveis", c: "let nome = 'Bernardo';\nconsole.log('Olá, ' + nome);" },
-    2: { t: "Funções", c: "function soma(a,b){ return a+b; }\nconsole.log(soma(5,10));" }
+// CONTEÚDO DAS PRÁTICAS
+const aulas = {
+    1: { t: "Variáveis", c: "let mestre = 'Bernardo';\nconsole.log('Professor: ' + mestre);" },
+    2: { t: "Funções", c: "function acao(){ return 'Codando...'; }\nconsole.log(acao());" },
+    3: { t: "Lógica", c: "let nota = 10;\nif(nota >= 7) console.log('Aprovado!');" }
 };
 
 function verAula(id) {
-    const area = document.getElementById('tutorial-texto');
-    const aula = conteudo[id];
-    area.innerHTML = `
-        <div class="card" style="margin-bottom:20px;">
-            <h3>Praticando: ${aula.t}</h3>
-            <textarea id="codigo-editor">${aula.c}</textarea>
-            <button onclick="rodar()" class="btn-primary" style="margin-top:10px;">Executar</button>
-            <div id="console-output">> Resultado...</div>
+    const local = document.getElementById('tutorial-texto');
+    const item = aulas[id];
+    local.innerHTML = `
+        <div class="card">
+            <h3>Desafio: ${item.t}</h3>
+            <textarea id="codigo-editor">${item.c}</textarea>
+            <button onclick="rodar()" class="btn-primary" style="margin-top:10px;">Executar Código</button>
+            <div id="console-output">> Aguardando...</div>
         </div>`;
+    window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
 function rodar() {
-    const code = document.getElementById('codigo-editor').value;
+    const cod = document.getElementById('codigo-editor').value;
     const out = document.getElementById('console-output');
     out.innerHTML = "";
     try {
         const originalLog = console.log;
         console.log = (m) => { out.innerHTML += "> " + m + "<br>"; };
-        eval(code);
+        eval(cod);
         console.log = originalLog;
     } catch(e) { out.innerHTML = "Erro: " + e.message; }
 }
