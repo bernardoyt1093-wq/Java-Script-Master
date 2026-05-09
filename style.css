@@ -1,66 +1,76 @@
-/* Importando as fontes */
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 
 :root {
-    /* MODO ESCURO (Suas cores originais) */
     --bg-color: #282828;
-    --card-bg: #9D86CD;
-    --text-primary: #ffffff;
-    --text-dark: #282828;
-    --accent-blue: #98BFFF;
     --nav-bg: #9D86CD;
+    --card-bg: #8c98e3;
+    --accent: #98BFFF;
+    --secondary: #909ce8;
+    --text-color: #ffffff;
+    --text-dark: #282828;
     --transition: 0.5s ease;
 }
 
 [data-theme="light"] {
-    /* MODO CLARO (Inversão harmônica) */
     --bg-color: #f0f0f0;
+    --nav-bg: #909ce8;
     --card-bg: #ffffff;
-    --text-primary: #282828;
+    --text-color: #282828;
     --text-dark: #282828;
-    --accent-blue: #909ce8;
-    --nav-bg: #8c98e3;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; padding: 0; box-sizing: border-box;
     font-family: 'Alfa Slab One', serif;
-    transition: background var(--transition), color var(--transition); /* Isso faz o "suave" */
+    transition: background var(--transition), color var(--transition);
 }
 
-body {
-    background-color: var(--bg-color);
-    color: var(--text-primary);
-}
-
-/* Ajuste nos Cards para usarem as variáveis */
-.card {
-    background-color: var(--card-bg);
-    color: var(--text-dark);
-    border: 4px solid var(--accent-blue);
-    padding: 20px;
-    border-radius: 15px;
+body { 
+    background-color: var(--bg-color); 
+    color: var(--text-color); 
+    overflow-x: hidden; 
 }
 
 .navbar {
     background-color: var(--nav-bg);
+    padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center;
+    position: sticky; top: 0; z-index: 1000;
 }
+
+.navbar ul { display: flex; list-style: none; gap: 15px; align-items: center; }
+
+.navbar a { text-decoration: none; color: var(--text-dark); font-size: 0.8rem; }
 
 .theme-switch {
-    background-color: var(--text-dark); /* Cor escura que você pediu: #282828 */
-    color: #ffffff;
-    border: 2px solid var(--accent);
-    padding: 8px 15px;
-    border-radius: 8px;
-    cursor: pointer;
+    background: var(--text-dark); color: white; border: 2px solid var(--accent);
+    padding: 8px 12px; border-radius: 8px; cursor: pointer; font-size: 0.7rem;
     font-family: 'Alfa Slab One', serif;
-    font-size: 12px;
-    transition: 0.3s;
 }
 
-.theme-switch:hover {
-    background-color: var(--accent);
-    color: var(--text-dark);
+.hero { text-align: center; padding: 80px 20px; background: linear-gradient(180deg, var(--nav-bg), transparent); }
+
+.hero h1 { font-size: 2.5rem; color: var(--text-dark); margin-bottom: 10px; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+.card {
+    background-color: var(--card-bg); color: var(--text-dark);
+    padding: 30px; border-radius: 20px; border: 4px solid var(--accent);
+    margin-bottom: 20px;
+}
+
+.btn-primary, .btn-lesson {
+    background-color: var(--bg-color); color: var(--accent);
+    padding: 12px 20px; border-radius: 10px; border: none; cursor: pointer;
+    text-decoration: none; display: inline-block; margin-top: 10px;
+}
+
+#codigo-editor { 
+    width: 100%; height: 150px; background: #1a1a1a; color: #4ade80; 
+    padding: 15px; font-family: monospace; border-radius: 10px; margin-top: 15px; font-size: 1rem;
+}
+
+#console-output { 
+    background: #000; padding: 15px; border-radius: 10px; margin-top: 10px; 
+    font-family: monospace; color: #fff; min-height: 50px;
 }
