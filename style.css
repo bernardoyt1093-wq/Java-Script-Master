@@ -5,15 +5,14 @@
     --nav: #9D86CD;
     --card: #8c98e3;
     --accent: #98BFFF;
-    --text-dark: #282828;
     --text-light: #ffffff;
+    --text-dark: #282828;
 }
 
 [data-theme="light"] {
     --bg: #f0f0f0;
     --nav: #98BFFF;
     --card: #ffffff;
-    --text-dark: #282828;
     --text-light: #282828;
 }
 
@@ -25,7 +24,7 @@
 body {
     background-color: var(--bg);
     color: var(--text-light);
-    transition: 0.4s;
+    transition: background 0.5s ease;
 }
 
 .navbar {
@@ -34,24 +33,20 @@ body {
     display: flex; justify-content: space-between; align-items: center;
 }
 
-.nav-links {
-    display: flex; list-style: none; gap: 15px; align-items: center;
-}
+.navbar ul { display: flex; list-style: none; gap: 15px; align-items: center; }
 
-.nav-links a {
-    text-decoration: none; color: var(--text-dark); font-size: 14px;
-}
+.navbar a { text-decoration: none; color: var(--text-dark); font-size: 13px; }
 
-.comunidade-link {
+.btn-comunidade {
     background: var(--accent); padding: 5px 10px; border-radius: 5px;
 }
 
 .theme-switch {
     background: var(--text-dark); color: white; border: 2px solid var(--accent);
-    padding: 8px 12px; border-radius: 8px; cursor: pointer;
+    padding: 7px 12px; border-radius: 8px; cursor: pointer; font-family: 'Alfa Slab One', cursive;
 }
 
-.hero { text-align: center; padding: 50px 20px; }
+.hero { text-align: center; padding: 60px 20px; }
 .hero h1 span { color: var(--nav); }
 
 .container { max-width: 900px; margin: 0 auto; padding: 20px; }
@@ -59,15 +54,17 @@ body {
 .card {
     background-color: var(--card); color: var(--text-dark);
     padding: 30px; border-radius: 20px; border: 5px solid var(--accent);
+    margin-bottom: 20px;
 }
 
 .btn-primary {
     background: var(--bg); color: var(--accent);
     padding: 12px 20px; border: none; border-radius: 10px; cursor: pointer;
+    font-family: 'Alfa Slab One', cursive;
 }
 
 #codigo-editor {
-    width: 100%; height: 150px; background: #000; color: #0f0;
+    width: 100%; height: 140px; background: #000; color: #0f0;
     padding: 15px; font-family: monospace; border-radius: 10px; margin-top: 15px;
 }
 
