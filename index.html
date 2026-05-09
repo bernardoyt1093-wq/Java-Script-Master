@@ -3,34 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Master - Bernardo</title>
+    <title>JS Master - Prof. Bernardo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="logo">JS<span>Master</span></div>
-        <ul class="nav-links">
+        <ul>
             <li><a href="index.html">Início</a></li>
-            <li><a href="https://discord.com/channels/1499755355570176081/1499755770991083570" target="_blank" class="comunidade-link">Comunidade</a></li>
+            <li><a href="aulas.html">Aulas</a></li>
+            <li><a href="praticas.html">Práticas</a></li>
+            <li><a href="https://discord.com/channels/1499755355570176081/1499755770991083570" target="_blank" class="btn-comunidade">Comunidade</a></li>
             <li><button id="theme-button" class="theme-switch">Trocar Tema</button></li>
         </ul>
     </nav>
 
     <header class="hero">
         <h1>Laboratório <span>Bernardo</span></h1>
-        <p>Aprenda JavaScript com as cores que você escolheu.</p>
+        <p>Aprenda JavaScript com Estilo e Prática.</p>
     </header>
 
     <main class="container">
         <div id="tutorial-texto"></div>
 
         <section class="card">
-            <h2>Desafios Práticos</h2>
-            <p>Clique abaixo para abrir o editor interativo:</p>
-            <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px;">
+            <h2>Desafios de Código</h2>
+            <p>Selecione um nível para abrir o laboratório:</p>
+            <div style="display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap;">
                 <button onclick="verAula(1)" class="btn-primary">Nível 1: Variáveis</button>
                 <button onclick="verAula(2)" class="btn-primary">Nível 2: Funções</button>
+                <button onclick="verAula(3)" class="btn-primary">Nível 3: Lógica</button>
             </div>
         </section>
     </main>
