@@ -3,93 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercícios de JavaScript - Bernardo</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+IE+Sj:wght@100..400&display=swap" rel="stylesheet">
+    <title>JS Master - Aulas</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <nav class="navbar">
         <div class="logo">JS<span>Master</span></div>
         <ul>
             <li><a href="index.html">Início</a></li>
+            <li><a href="aulas.html">Aulas</a></li>
+            <li><a href="praticas.html">Práticas</a></li>
+            <li><a href="https://discord.com/channels/1499755355570176081/1499755770991083570" target="_blank" class="btn-comunidade">Comunidade</a></li>
         </ul>
     </nav>
-
-    <header class="hero" style="padding: 40px 20px;">
-        <h1>Central de <span>Exercícios</span></h1>
-        <p>Pratique agora os 3 pilares do JavaScript.</p>
-    </header>
-
     <main class="container">
-
-        <section class="card" style="margin-bottom: 40px;">
-            <span class="badge">Nível: Iniciante</span>
-            <h2 style="font-family: 'Playwrite IE Sj', cursive; margin: 15px 0; color: var(--js-yellow);">1. O Guardador de Nomes</h2>
-            
-            <p><strong>A Explicação:</strong> As variáveis (<code>let</code> e <code>const</code>) são como etiquetas em caixas. Se você quer que o computador lembre de algo, você precisa dar um nome para esse dado.</p>
-            
-            <div style="background: #2d3a4f; padding: 15px; border-radius: 8px; border-left: 4px solid #f7df1e;">
-                <strong>🎯 O Desafio:</strong> Crie uma variável para o nome de um carro e outra para o preço dele. Depois, mostre uma frase dizendo: "O carro [nome] custa [preço]".
-            </div>
-
-            <div style="background: #000; color: #4ade80; padding: 15px; border-radius: 8px; margin-top: 15px; font-family: monospace;">
-                <span style="color: #888;">// Código para testar no console:</span><br>
-                let carro = "Ferrari";<br>
-                let preco = 1000000;<br>
-                console.log("O carro " + carro + " custa R$" + preco);
-            </div>
-        </section>
-
-        <section class="card" style="margin-bottom: 40px;">
-            <span class="badge">Nível: Intermediário</span>
-            <h2 style="font-family: 'Playwrite IE Sj', cursive; margin: 15px 0; color: var(--js-yellow);">2. A Máquina de Somar</h2>
-            
-            <p><strong>A Explicação:</strong> Funções são como "receitas de bolo". Você escreve uma vez e usa sempre que precisar, apenas chamando o nome dela.</p>
-            
-            <div style="background: #2d3a4f; padding: 15px; border-radius: 8px; border-left: 4px solid #f7df1e;">
-                <strong>🎯 O Desafio:</strong> Crie uma função chamada <code>somar</code> que recebe dois números e mostra o resultado em um alerta na tela.
-            </div>
-
-            <div style="background: #000; color: #4ade80; padding: 15px; border-radius: 8px; margin-top: 15px; font-family: monospace;">
-                <span style="color: #888;">// Código para testar no console:</span><br>
-                function somar(n1, n2) {<br>
-                &nbsp;&nbsp;let resultado = n1 + n2;<br>
-                &nbsp;&nbsp;alert("A soma é: " + resultado);<br>
-                }<br>
-                <span style="color: #888;">// Para usar, digite: somar(10, 5);</span>
-            </div>
-        </section>
-
-        <section class="card" style="margin-bottom: 40px;">
-            <span class="badge">Nível: Mestre</span>
-            <h2 style="font-family: 'Playwrite IE Sj', cursive; margin: 15px 0; color: var(--js-yellow);">3. O Verificador de Idade</h2>
-            
-            <p><strong>A Explicação:</strong> O <code>if</code> (Se) serve para o computador decidir o que fazer. Se uma condição for verdadeira, ele faz uma coisa; se for falsa (<code>else</code>), ele faz outra.</p>
-            
-            <div style="background: #2d3a4f; padding: 15px; border-radius: 8px; border-left: 4px solid #f7df1e;">
-                <strong>🎯 O Desafio:</strong> Crie um código que verifique se uma pessoa pode votar. (Idade mínima: 16 anos).
-            </div>
-
-            <div style="background: #000; color: #4ade80; padding: 15px; border-radius: 8px; margin-top: 15px; font-family: monospace;">
-                <span style="color: #888;">// Código para testar no console:</span><br>
-                let idade = 15;<br><br>
-                if (idade >= 16) {<br>
-                &nbsp;&nbsp;console.log("Pode votar!");<br>
-                } else {<br>
-                &nbsp;&nbsp;console.log("Ainda não pode votar.");<br>
-                }
-            </div>
-        </section>
-
-        <div style="text-align: center; padding-bottom: 50px;">
-            <button class="btn-primary" onclick="window.location.href='index.html'">Voltar ao Início</button>
-        </div>
-
+        <header class="hero"><h1>Conteúdo <span>Teórico</span></h1></header>
+        <div class="card"><h3>01. Variáveis</h3><p>Aprenda a guardar dados usando let e const.</p></div>
+        <div class="card"><h3>02. Funções</h3><p>Como criar blocos de código reutilizáveis.</p></div>
+        <div class="card"><h3>03. Condicionais</h3><p>Tomando decisões com If e Else.</p></div>
+        <div class="card"><h3>04. Matemática</h3><p>Operadores de soma, subtração e cálculos.</p></div>
+        <div class="card"><h3>05. Listas (Arrays)</h3><p>Como organizar vários dados em uma lista.</p></div>
+        <div class="card"><h3>06. Loops (For)</h3><p>Repetindo tarefas automaticamente.</p></div>
+        <div class="card"><h3>07. Objetos</h3><p>Estruturando dados complexos.</p></div>
+        <div class="card"><h3>08. Eventos</h3><p>Interagindo com cliques e teclado.</p></div>
+        <div class="card"><h3>09. Arrow Functions</h3><p>O jeito moderno de escrever funções.</p></div>
+        <div class="card"><h3>10. Manipulação de Texto</h3><p>Transformando letras e palavras.</p></div>
     </main>
-
 </body>
 </html>
