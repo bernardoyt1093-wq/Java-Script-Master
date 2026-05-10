@@ -1,16 +1,15 @@
+// SISTEMA DE 10 NÍVEIS (3 Anteriores + 7 Novos)
 const aulasConteudo = {
-    1: {
-        titulo: "Praticando Variáveis",
-        codigo: "let curso = 'JS Master';\nconsole.log('Bem-vindo ao ' + curso);"
-    },
-    2: {
-        titulo: "Praticando Funções",
-        codigo: "function saudacao(nome) {\n  return 'Olá ' + nome;\n}\nconsole.log(saudacao('Bernardo'));"
-    },
-    3: {
-        titulo: "Praticando Lógica",
-        codigo: "let pontos = 80;\nif(pontos >= 50) {\n  console.log('Aprovado!');\n} else {\n  console.log('Reprovado');\n}"
-    }
+    1: { t: "Variáveis (let/const)", c: "let mestre = 'Bernardo';\nconst curso = 'JS Master';\nconsole.log(mestre + ' ensina no ' + curso);" },
+    2: { t: "Funções Básicas", c: "function saudacao(nome) {\n  return 'Olá, ' + nome + '!';\n}\nconsole.log(saudacao('Aluno'));" },
+    3: { t: "Condicionais (If/Else)", c: "let hora = 14;\nif(hora < 12) {\n  console.log('Bom dia!');\n} else {\n  console.log('Boa tarde!');\n}" },
+    4: { t: "Operadores Matemáticos", c: "let preco = 50;\nlet desconto = 0.2; // 20%\nlet final = preco - (preco * desconto);\nconsole.log('Preço com desconto: R$' + final);" },
+    5: { t: "Arrays (Listas)", c: "let frutas = ['Maçã', 'Banana', 'Uva'];\nfrutas.push('Laranja');\nconsole.log('Minha lista: ' + frutas);\nconsole.log('Total: ' + frutas.length);" },
+    6: { t: "Loops (For)", c: "for(let i = 1; i <= 5; i++) {\n  console.log('Contagem: ' + i);\n}" },
+    7: { t: "Objetos", c: "let carro = {\n  marca: 'Toyota',\n  modelo: 'Corolla',\n  ano: 2024\n};\nconsole.log('Eu tenho um ' + carro.modelo);" },
+    8: { t: "Eventos e DOM", c: "// Imagine que clicamos em um botão\nconsole.log('Botão clicado! Alterando cor...');" },
+    9: { t: "Arrow Functions", c: "const dobrar = (n) => n * 2;\nconsole.log('O dobro de 15 é: ' + dobrar(15));" },
+    10: { t: "Manipulação de Strings", c: "let texto = 'javascript é incrível';\nconsole.log(texto.toUpperCase());\nconsole.log('Tem a palavra JS? ' + texto.includes('js'));" }
 };
 
 function verAula(id) {
