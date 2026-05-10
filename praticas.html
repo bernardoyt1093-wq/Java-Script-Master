@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laboratório JS - Prof. Bernardo</title>
+    <title>JS Master - Práticas</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <nav class="navbar">
         <div class="logo">JS<span>Master</span></div>
         <ul>
@@ -17,43 +16,26 @@
             <li><a href="https://discord.com/channels/1499755355570176081/1499755770991083570" target="_blank" class="btn-comunidade">Comunidade</a></li>
         </ul>
     </nav>
-
-    <header class="hero">
-        <h1 style="font-family: 'Alfa Slab One', cursive;">Laboratório <span>Prático</span></h1>
-        <p>Escolha um desafio abaixo para abrir o editor de código.</p>
-    </header>
-
     <main class="container">
-        
         <div id="tutorial-texto">
-            <div class="card" style="text-align: center;">
-                <h3>Aguardando seleção...</h3>
-                <p>Clique em um dos botões abaixo para começar a programar.</p>
-            </div>
+            <div class="card"><h3>Selecione uma aula abaixo para começar!</h3></div>
         </div>
-
-<section class="card" style="margin-top: 30px;">
-    <h2 style="margin-bottom: 20px;">Desafios Disponíveis</h2>
-    <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
-        <button onclick="verAula(1)" class="btn-lesson">01. Variáveis</button>
-        <button onclick="verAula(2)" class="btn-lesson">02. Funções</button>
-        <button onclick="verAula(3)" class="btn-lesson">03. Condicionais</button>
-        <button onclick="verAula(4)" class="btn-lesson">04. Matemática</button>
-        <button onclick="verAula(5)" class="btn-lesson">05. Listas (Arrays)</button>
-        <button onclick="verAula(6)" class="btn-lesson">06. Repetição (Loops)</button>
-        <button onclick="verAula(7)" class="btn-lesson">07. Objetos</button>
-        <button onclick="verAula(8)" class="btn-lesson">08. Eventos</button>
-        <button onclick="verAula(9)" class="btn-lesson">09. Arrow Functions</button>
-        <button onclick="verAula(10)" class="btn-lesson">10. Strings</button>
-    </div>
-</section>
-
+        <section class="card">
+            <h2>10 Desafios Práticos</h2>
+            <div class="grid-aulas">
+                <button onclick="verAula(1)" class="btn-lesson">01. Variáveis</button>
+                <button onclick="verAula(2)" class="btn-lesson">02. Funções</button>
+                <button onclick="verAula(3)" class="btn-lesson">03. Condicionais</button>
+                <button onclick="verAula(4)" class="btn-lesson">04. Matemática</button>
+                <button onclick="verAula(5)" class="btn-lesson">05. Listas</button>
+                <button onclick="verAula(6)" class="btn-lesson">06. Loops</button>
+                <button onclick="verAula(7)" class="btn-lesson">07. Objetos</button>
+                <button onclick="verAula(8)" class="btn-lesson">08. Eventos</button>
+                <button onclick="verAula(9)" class="btn-lesson">09. Arrow Func</button>
+                <button onclick="verAula(10)" class="btn-lesson">10. Strings</button>
+            </div>
+        </section>
     </main>
-
-    <footer style="text-align: center; padding: 40px; opacity: 0.7; font-size: 0.8rem;">
-        &copy; 2026 JS Master - Prof. Bernardo
-    </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
