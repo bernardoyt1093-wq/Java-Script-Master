@@ -1,42 +1,37 @@
-// SISTEMA DE 10 NÍVEIS (3 Anteriores + 7 Novos)
-const aulasConteudo = {
-    1: { t: "Variáveis (let/const)", c: "let mestre = 'Bernardo';\nconst curso = 'JS Master';\nconsole.log(mestre + ' ensina no ' + curso);" },
-    2: { t: "Funções Básicas", c: "function saudacao(nome) {\n  return 'Olá, ' + nome + '!';\n}\nconsole.log(saudacao('Aluno'));" },
-    3: { t: "Condicionais (If/Else)", c: "let hora = 14;\nif(hora < 12) {\n  console.log('Bom dia!');\n} else {\n  console.log('Boa tarde!');\n}" },
-    4: { t: "Operadores Matemáticos", c: "let preco = 50;\nlet desconto = 0.2; // 20%\nlet final = preco - (preco * desconto);\nconsole.log('Preço com desconto: R$' + final);" },
-    5: { t: "Arrays (Listas)", c: "let frutas = ['Maçã', 'Banana', 'Uva'];\nfrutas.push('Laranja');\nconsole.log('Minha lista: ' + frutas);\nconsole.log('Total: ' + frutas.length);" },
-    6: { t: "Loops (For)", c: "for(let i = 1; i <= 5; i++) {\n  console.log('Contagem: ' + i);\n}" },
-    7: { t: "Objetos", c: "let carro = {\n  marca: 'Toyota',\n  modelo: 'Corolla',\n  ano: 2024\n};\nconsole.log('Eu tenho um ' + carro.modelo);" },
-    8: { t: "Eventos e DOM", c: "// Imagine que clicamos em um botão\nconsole.log('Botão clicado! Alterando cor...');" },
-    9: { t: "Arrow Functions", c: "const dobrar = (n) => n * 2;\nconsole.log('O dobro de 15 é: ' + dobrar(15));" },
-    10: { t: "Manipulação de Strings", c: "let texto = 'javascript é incrível';\nconsole.log(texto.toUpperCase());\nconsole.log('Tem a palavra JS? ' + texto.includes('js'));" }
+const aulas = {
+    1: { t: "Variáveis", c: "let nome = 'Bernardo';\nconsole.log('Olá, ' + nome);" },
+    2: { t: "Funções", c: "function soma(a,b){ return a+b; }\nconsole.log(soma(10,5));" },
+    3: { t: "Condicionais", c: "let nota = 8;\nif(nota >= 7) console.log('Aprovado!');" },
+    4: { t: "Matemática", c: "let conta = (10 + 5) * 2;\nconsole.log('Resultado: ' + conta);" },
+    5: { t: "Listas", c: "let itens = ['HTML', 'CSS', 'JS'];\nconsole.log(itens[2]);" },
+    6: { t: "Loops", c: "for(let i=1; i<=3; i++){\n console.log('Repetição: ' + i);\n}" },
+    7: { t: "Objetos", c: "let user = {nome: 'Bernardo', xp: 100};\nconsole.log(user.xp);" },
+    8: { t: "Eventos", c: "console.log('Simulando clique no botão...');" },
+    9: { t: "Arrow Functions", c: "const msg = () => 'JS é top';\nconsole.log(msg());" },
+    10: { t: "Strings", c: "let txt = 'bernardo';\nconsole.log(txt.toUpperCase());" }
 };
 
 function verAula(id) {
     const area = document.getElementById('tutorial-texto');
-    const aula = aulasConteudo[id];
-
+    const aula = aulas[id];
     area.innerHTML = `
-        <div style="background: #1e293b; padding: 20px; border-radius: 12px; border: 2px solid #f7df1e; margin-bottom: 30px;">
-            <h2 style="color: #f7df1e; font-family: 'Playwrite IE Sj', cursive;">${aula.titulo}</h2>
-            <textarea id="codigo-editor" style="width:100%; height:100px; background:#000; color:#4ade80; font-family:monospace; padding:10px; margin:10px 0;">${aula.codigo}</textarea>
-            <button onclick="executarCodigo()" class="btn-primary">▶ Executar</button>
-            <div id="console-output" style="background:#000; color:#fff; padding:10px; margin-top:10px; border-radius:5px; font-family:monospace;">> Aguardando...</div>
-        </div>
-    `;
+        <div class="card">
+            <h2>Aula: ${aula.t}</h2>
+            <textarea id="codigo-editor">${aula.c}</textarea>
+            <button onclick="executar()" class="btn-lesson" style="margin-top:10px; background:var(--accent); color:var(--text-dark);">RODAR CÓDIGO</button>
+            <div id="console-output">> Aguardando execução...</div>
+        </div>`;
     window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
-function executarCodigo() {
+function executar() {
     const cod = document.getElementById('codigo-editor').value;
     const out = document.getElementById('console-output');
     out.innerHTML = "";
     try {
-        const log = console.log;
+        const originalLog = console.log;
         console.log = (m) => { out.innerHTML += "> " + m + "<br>"; };
         eval(cod);
-        console.log = log;
-    } catch (e) {
-        out.innerHTML = "<span style='color:red;'>Erro: " + e.message + "</span>";
-    }
+        console.log = originalLog;
+    } catch(e) { out.innerHTML = "Erro: " + e.message; }
 }
