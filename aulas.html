@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Master - Conteúdo das Aulas</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilo extra para os blocos de código ficarem bonitos na aula */
+        code {
+            background-color: #000;
+            color: #4ade80;
+            padding: 15px;
+            display: block;
+            border-radius: 10px;
+            margin-top: 10px;
+            font-family: monospace !important;
+            font-size: 0.9rem;
+            border: 2px solid var(--accent);
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -19,58 +33,68 @@
 
     <header class="hero">
         <h1>Trilha <span>JavaScript</span></h1>
-        <p>Aprenda os fundamentos passo a passo com o Prof. Bernardo.</p>
+        <p>Estude os conceitos e veja os exemplos abaixo.</p>
     </header>
 
     <main class="container">
         <section class="card">
             <h2>01. Variáveis (let e const)</h2>
-            <p>Variáveis são como caixas onde guardamos informações. Usamos <strong>let</strong> para valores que podem mudar e <strong>const</strong> para valores fixos (constantes).</p>
+            <p>Usamos para armazenar dados. Let pode mudar, Const não.</p>
+            <code>let nome = "Bernardo";<br>const idade = 15;</code>
         </section>
 
         <section class="card">
             <h2>02. Funções</h2>
-            <p>Funções são blocos de códigos que executam uma tarefa específica. Elas ajudam a evitar repetição, permitindo que você chame o mesmo comando várias vezes.</p>
+            <p>Blocos que executam tarefas quando chamados.</p>
+            <code>function msg() {<br>&nbsp;&nbsp;return "Olá Mundo!";<br>}</code>
         </section>
 
         <section class="card">
             <h2>03. Condicionais (If/Else)</h2>
-            <p>O <strong>if</strong> serve para o computador tomar decisões. "Se algo for verdade, faça isso; caso contrário (else), faça aquilo". É a base da lógica.</p>
+            <p>Usado para tomar decisões no código.</p>
+            <code>if (nota >= 7) {<br>&nbsp;&nbsp;console.log("Aprovado");<br>}</code>
         </section>
 
         <section class="card">
             <h2>04. Operadores Matemáticos</h2>
-            <p>No JS podemos fazer contas de somar (+), subtrair (-), multiplicar (*) e dividir (/). Também usamos parênteses para definir o que calcular primeiro.</p>
+            <p>Cálculos simples de matemática.</p>
+            <code>let total = (10 + 5) * 2; // Resultado: 30</code>
         </section>
 
         <section class="card">
             <h2>05. Listas (Arrays)</h2>
-            <p>Arrays permitem guardar vários valores em uma única variável. Você acessa os itens pela posição deles, começando sempre do número <strong>0</strong>.</p>
+            <p>Uma variável que guarda vários valores.</p>
+            <code>let lista = ["HTML", "CSS", "JS"];</code>
         </section>
 
         <section class="card">
             <h2>06. Loops (For)</h2>
-            <p>O comando <strong>for</strong> cria uma repetição automática. É útil para percorrer listas ou repetir uma ação várias vezes sem escrever o código repetido.</p>
+            <p>Repete o código várias vezes.</p>
+            <code>for (let i = 0; i < 5; i++) {<br>&nbsp;&nbsp;console.log(i);<br>}</code>
         </section>
 
         <section class="card">
             <h2>07. Objetos</h2>
-            <p>Objetos guardam informações detalhadas de uma coisa só. Exemplo: um objeto "Carro" pode ter marca, cor e ano, tudo organizado em propriedades.</p>
+            <p>Guarda propriedades de um item.</p>
+            <code>let player = { nome: "Bernardo", xp: 100 };</code>
         </section>
 
         <section class="card">
             <h2>08. Eventos</h2>
-            <p>Eventos são ações que acontecem no site, como um clique de botão, o passar do mouse ou o apertar de uma tecla. O JS "escuta" e reage a isso.</p>
+            <p>Reage a cliques ou ações do usuário.</p>
+            <code>botao.addEventListener("click", rodar);</code>
         </section>
 
         <section class="card">
             <h2>09. Arrow Functions</h2>
-            <p>É uma forma moderna e curta de escrever funções no JavaScript. Elas usam o símbolo <code>=></code> e deixam o código mais limpo e fácil de ler.</p>
+            <p>Funções escritas de um jeito moderno.</p>
+            <code>const soma = (a, b) => a + b;</code>
         </section>
 
         <section class="card">
             <h2>10. Manipulação de Strings</h2>
-            <p>Strings são textos. No JS, podemos transformar textos para maiúsculas, minúsculas, contar letras ou até trocar palavras dentro de uma frase.</p>
+            <p>Comandos para alterar textos.</p>
+            <code>let texto = "js";<br>console.log(texto.toUpperCase());</code>
         </section>
     </main>
 
